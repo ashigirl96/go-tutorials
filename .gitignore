@@ -12,3 +12,10 @@
 
 # Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
 .glide/
+.idea*
+.idea/libraries/
+.idea/misc.xml
+.idea/modules.xml
+.idea/tutorial.iml
+.idea/workspace.xml
+test.jpg
