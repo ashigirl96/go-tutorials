@@ -148,3 +148,7 @@ naked returnステートメントは, 短い関数でのみ利用すべき.
 定数はcharacter、string, boolean, numeric(数値)のみで使える
 
 定数は`:=`を使って宣言できない
+
+### For is Go's "while"
+
+セミコロンを省略して, C言語のwhileはGoでは`for`だけを使う
