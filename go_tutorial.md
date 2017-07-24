@@ -152,3 +152,66 @@ naked returnステートメントは, 短い関数でのみ利用すべき.
 ### For is Go's "while"
 
 セミコロンを省略して, C言語のwhileはGoでは`for`だけを使う
+
+### Switch
+
+Goの`switch`は他の言語と比較して, 大きく異なるのは, `case`の最後で自動的に`break`する. `break`せずに通したい場合は, `fallthrough`文を`case`の最後に記述する
+
+### Defer
+
+`defer`は, `defer`へ渡した関数の実行を, 呼び出し元の関数の終わり(returnする)まで遅延させるもの.
+
+`defer`へ渡した関数の引数は, すぐに評価されるが, その関数自体は呼び出し元の関数がreturnするまで実行されない
+
+### Pointers
+
+ポインタは変数のメモリアドレスを指す
+
+```
+var p *int
+i := 42
+p = &i
+```
+
+### Structs
+
+`structs`(構造体)は, `field`の集まりである
+
+(`type`宣言は型を宣言するためのもの)
+
+### Pointers to structs
+
+`struct`の`Field`は, `struct`のポインタを通してアクセスすることもできる
+
+`Field`Xにアクセスするには`(*p).X`のようにかく. Goでは代わりに`p.X`と書く
+
+### Arrays
+
+`[n]T`型は, 型`T`の`n`個の変数の配列(array)を表す
+
+```
+var a [10]int
+```
+
+### Slices
+
+配列は固定長です。一方で、スライスは可変長です。より柔軟な配列とみなすことgあできます。スライスは配列よりも一般的です。
+
+型`[]T`は型`T`のスライスを表します。
+
+
+### Slice length and capacity
+
+スライスにはlengthとcapacityの両方がある
+
+スライスの長さはそれに含まれる要素数
+
+capacityは、スライスのシア書の要素から数えて、元となる配列の要素数
+
+### Creating a slice with make
+
+`make`関数で動的サイズの配列を作れる.
+
+`make`関数はゼロ化された配列を割り当て、その配列を指すスライスを返す
+
+
