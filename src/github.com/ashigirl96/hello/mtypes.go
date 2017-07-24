@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/ashigirl96/moretypes"
+	"golang.org/x/tour/wc"
 )
 
 var (
@@ -39,5 +40,17 @@ func main() {
 
 	moretypes.MakeBoard()
 
-	moretypes.AppendArray()
+	moretypes.Maps()
+
+	wc.Test(moretypes.WordCount)
+
+	su := moretypes.Adder()
+
+	fmt.Println(su(10))
+	fmt.Println(su(200))
+
+	fib := moretypes.Fib()
+	for i := 0; i < 10; i++ {
+		fmt.Println(fib())
+	}
 }

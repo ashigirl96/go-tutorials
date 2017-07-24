@@ -48,13 +48,3 @@ func MakeBoard() {
 	}
 }
 
-
-func AppendArray() {
-	var a []int
-	b := []int{10, 20, 30}
-
-	a = append(a, b)
-
-	fmt.Println(a)
-}
-

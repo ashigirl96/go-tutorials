@@ -19,3 +19,7 @@
 .idea/tutorial.iml
 .idea/workspace.xml
 test.jpg
+
+src/golang.org/*
+pkg/*
+bin/*

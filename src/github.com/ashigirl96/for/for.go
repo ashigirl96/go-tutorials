@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"golang.org/x/tour/pic"
 )
 
 func Pow() {
@@ -22,23 +23,42 @@ func Pow2() {
 }
 
 
+func Pic(dx, dy int) [][]uint8 {
+	// var pic [dx][dy]uint8
+	pic := make([][]uint8, dx)
+
+	for i := range pic {
+		pic[i] = make([]uint8, dy)
+	}
+
+	for i := range pic {
+		for j := range pic[i] {
+			pic[i][j] = uint8((i * j) / 2)
+		}
+	}
+
+	return pic
+}
+
 
 
 func main() {
-	sum := 0
-	for i := 0; i < 10; i++ {
-		sum += i
-	}
-	fmt.Println(sum)
+	//sum := 0
+	//for i := 0; i < 10; i++ {
+	//	sum += i
+	//}
+	//fmt.Println(sum)
+	//
+	//Pow()
+	//
+	//Pow2()
+	//
+	//var pic [8][3]uint8
+	//
+	//
+	//fmt.Println(pic)
+	//fmt.Println(len(pic[0]))
+	//fmt.Println(pic2)
 
-	Pow()
-
-	Pow2()
-
-	var pic [8][3]uint8
-
-
-	fmt.Println(pic)
-	fmt.Println(len(pic[0]))
-	fmt.Println(pic2)
+	 pic.Show(Pic)
 }
