@@ -49,8 +49,8 @@ func main() {
 	fmt.Println(su(10))
 	fmt.Println(su(200))
 
-	fib := moretypes.Fib()
 	for i := 0; i < 10; i++ {
-		fmt.Println(fib())
+		fib := moretypes.Fib(i)
+		fmt.Println(fib)
 	}
 }

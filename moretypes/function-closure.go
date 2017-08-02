@@ -9,10 +9,10 @@ func Adder() func(int) int {
 }
 
 
-func Fib() func() int {
-	a, b := 0, 1
-	return func() int {
-		a, b = b, a + b
-		return a
-	}
-}
+//func Fib() func() int {
+//	a, b := 0, 1
+//	return func() int {
+//		a, b = b, a + b
+//		return a
+//	}
+//}

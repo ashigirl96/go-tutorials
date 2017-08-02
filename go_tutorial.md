@@ -228,3 +228,60 @@ Goの関数は`Closure`です. クロージャは、それ自身の外部から�
 
 `adder`関数はクロージャを返す. 各クロージャは、それ自身の`sum`変数へbindされる
 
+### Methods
+
+クラス(`class`)がないけど、型にメソッド(`method`)を定義できる
+
+メソッドは、特別なレシーバ(`receiver`)引数を関数に取ります
+
+`reciver`は、`func`キーワードとメソッド名の間に自身の引数リストで表現する
+
+### Pointer Receivers
+
+レシーバの型が, ある型`T`への構文`*T`があることを意味する. `T`は`*int`のようなポインタ自身を取ることができない
+
+例では`*Vertex`に`Scale`メソッドが定義されてる
+
+Pointer Reciverを持つメソッド(ここでは`Scale`)は、レシーバが指す変数を変更できる. Reciver自身を更新することが多いため, Variable ReciverよりもPointer Reciverの方が一般的
+
+`Scale`の宣言から`*`を消して、プログラムがどのように振る舞うか確認する
+
+Variable Receiverでは、`Scale`メソッドの操作は元の`Vertex`変数のコピーを操作する.
+
+つまり, `main`関数で宣言した`Vertex`変数を変更するためには, `Scale`メソッドはPointer Receiverにする必要がある
+
+なんというか、破壊的メソッドのような役割があるような.
+
+### Choosing a value of Pointer Receiver
+
+Pointer Receiverを使う理由
+
+- メソッドがレシーバが指す先の変数を変更するため
+- メソッドの呼び出し毎に変数のコピーを避けるため. レシーバが大きな構造体である場合に効率的
+
+### Interfaces
+
+interface型は、methodのsignatureの集まりで定義
+
+methodの集まりを実装した値を, `interface`型の変数へ持たせることができる
+
+### Type assertions
+
+Type Assertionは、interfaceの値の基になる具体的な値を利用する手段
+
+### Stringers
+
+Stringers Interfaceは、`string`として表現できる型
+
+Pythonでいう__str__(self)を書き換えるような感じだろうか
+
+### Reader
+
+io パッケージは、データストリームを読むことを表現する io.Reader インタフェースを規定されてる
+
+Goの標準ライブラリには、インタフェース、ファイル、ネットワーク接続、圧縮、暗号化、などで 多くの実装されてる
+
+
+
+
+
